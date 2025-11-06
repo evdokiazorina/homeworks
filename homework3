@@ -1,11 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-Converted from Jupyter Notebook: notebook.ipynb
-Conversion Date: 2025-10-05T19:00:47.126Z
-"""
 
-#!/usr/bin/env python3
 """
 Алгоритма Нидлмана-Вунша.
 """
@@ -86,7 +79,8 @@ def needleman_wunsch(seq1, seq2, match=5, mismatch=-1, gap=-1):
             delete = dp[i-1][j] + gap
             insert = dp[i][j-1] + gap
             
-            print(f"\nРасчет для {seq1[i-1]} vs {seq2[j-1]}:")
+            print(f"
+Расчет для {seq1[i-1]} vs {seq2[j-1]}:")
             print(f"↖ Совпадение: {dp[i-1][j-1]} + {match if seq1[i-1] == seq2[j-1] else '-1'} = {match_score}")
             print(f"↑ Удаление:   {dp[i-1][j]} + {gap} = {delete}")
             print(f"← Вставка:    {dp[i][j-1]} + {gap} = {insert}")
@@ -102,12 +96,14 @@ def needleman_wunsch(seq1, seq2, match=5, mismatch=-1, gap=-1):
     align1, align2 = "", ""
     i, j = n, m
     
-    print("\nОБРАТНЫЙ ПРОХОД:")
+    print("
+ОБРАТНЫЙ ПРОХОД:")
     print("=" * 50)
     
     step = 1
     while i > 0 or j > 0:
-        print(f"\nШаг {step}: Позиция ({i},{j})")
+        print(f"
+Шаг {step}: Позиция ({i},{j})")
         
         if i > 0 and j > 0 and dp[i][j] == dp[i-1][j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch):
             print(f"  ↖ Совпадение: {seq1[i-1]} = {seq2[j-1]}")
@@ -152,7 +148,8 @@ def main():
     
     result1, result2, matrix = needleman_wunsch(seq1, seq2)
     
-    print("\n" + "=" * 70)
+    print("
+" + "=" * 70)
     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:")
     print("=" * 70)
     print(f"Выравнивание 1: {result1}")
@@ -351,7 +348,8 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-1, gap=-1):
             delete = dp[i-1][j] + gap
             insert = dp[i][j-1] + gap
             
-            # print(f"\nРасчет для {seq1[i-1]} vs {seq2[j-1]}:")
+            # print(f"
+Расчет для {seq1[i-1]} vs {seq2[j-1]}:")
             # print(f"↖ Совпадение: {dp[i-1][j-1]} + {match if seq1[i-1] == seq2[j-1] else '-1'} = {match_score}")
             # print(f"↑ Удаление:   {dp[i-1][j]} + {gap} = {delete}")
             # print(f"← Вставка:    {dp[i][j-1]} + {gap} = {insert}")
@@ -367,12 +365,14 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-1, gap=-1):
     align1, align2 = "", ""
     i, j = n, m
     
-    #print("\nОБРАТНЫЙ ПРОХОД:")
+    #print("
+ОБРАТНЫЙ ПРОХОД:")
     #print("=" * 50)
     
     step = 1
     while i > 0 or j > 0:
-        #print(f"\nШаг {step}: Позиция ({i},{j})")
+        #print(f"
+Шаг {step}: Позиция ({i},{j})")
         
         if i > 0 and j > 0 and dp[i][j] == dp[i-1][j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch):
             #print(f"  ↖ Совпадение: {seq1[i-1]} = {seq2[j-1]}")
@@ -417,7 +417,8 @@ def main():
     
     result1, result2, matrix = needleman_wunsch(seq1, seq2)
     
-    print("\n" + "=" * 70)
+    print("
+" + "=" * 70)
     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:")
     print("=" * 70)
     print(f"Выравнивание 1: {result1}")
@@ -515,7 +516,8 @@ def needleman_wunsch(seq1, seq2, match=5, mismatch=-1, gap=-1):
             delete = dp[i-1][j] + gap
             insert = dp[i][j-1] + gap
             
-            # print(f"\nРасчет для {seq1[i-1]} vs {seq2[j-1]}:")
+            # print(f"
+Расчет для {seq1[i-1]} vs {seq2[j-1]}:")
             # print(f"↖ Совпадение: {dp[i-1][j-1]} + {match if seq1[i-1] == seq2[j-1] else '-1'} = {match_score}")
             # print(f"↑ Удаление:   {dp[i-1][j]} + {gap} = {delete}")
             # print(f"← Вставка:    {dp[i][j-1]} + {gap} = {insert}")
@@ -531,12 +533,14 @@ def needleman_wunsch(seq1, seq2, match=5, mismatch=-1, gap=-1):
     align1, align2 = "", ""
     i, j = n, m
     
-    #print("\nОБРАТНЫЙ ПРОХОД:")
+    #print("
+ОБРАТНЫЙ ПРОХОД:")
     #print("=" * 50)
     
     step = 1
     while i > 0 or j > 0:
-        #print(f"\nШаг {step}: Позиция ({i},{j})")
+        #print(f"
+Шаг {step}: Позиция ({i},{j})")
         
         if i > 0 and j > 0 and dp[i][j] == dp[i-1][j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch):
             #print(f"  ↖ Совпадение: {seq1[i-1]} = {seq2[j-1]}")
@@ -581,7 +585,8 @@ def main():
     
     result1, result2, matrix = needleman_wunsch(seq1, seq2)
     
-    print("\n" + "=" * 70)
+    print("
+" + "=" * 70)
     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:")
     print("=" * 70)
     print(f"Выравнивание 1: {result1}")
@@ -680,7 +685,8 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-1, gap=-3):
             delete = dp[i-1][j] + gap
             insert = dp[i][j-1] + gap
             
-            # print(f"\nРасчет для {seq1[i-1]} vs {seq2[j-1]}:")
+            # print(f"
+Расчет для {seq1[i-1]} vs {seq2[j-1]}:")
             # print(f"↖ Совпадение: {dp[i-1][j-1]} + {match if seq1[i-1] == seq2[j-1] else '-1'} = {match_score}")
             # print(f"↑ Удаление:   {dp[i-1][j]} + {gap} = {delete}")
             # print(f"← Вставка:    {dp[i][j-1]} + {gap} = {insert}")
@@ -696,12 +702,14 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-1, gap=-3):
     align1, align2 = "", ""
     i, j = n, m
     
-    #print("\nОБРАТНЫЙ ПРОХОД:")
+    #print("
+ОБРАТНЫЙ ПРОХОД:")
     #print("=" * 50)
     
     step = 1
     while i > 0 or j > 0:
-        #print(f"\nШаг {step}: Позиция ({i},{j})")
+        #print(f"
+Шаг {step}: Позиция ({i},{j})")
         
         if i > 0 and j > 0 and dp[i][j] == dp[i-1][j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch):
             #print(f"  ↖ Совпадение: {seq1[i-1]} = {seq2[j-1]}")
@@ -746,7 +754,8 @@ def main():
     
     result1, result2, matrix = needleman_wunsch(seq1, seq2)
     
-    print("\n" + "=" * 70)
+    print("
+" + "=" * 70)
     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:")
     print("=" * 70)
     print(f"Выравнивание 1: {result1}")
@@ -845,7 +854,8 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-3, gap=-1):
             delete = dp[i-1][j] + gap
             insert = dp[i][j-1] + gap
             
-            # print(f"\nРасчет для {seq1[i-1]} vs {seq2[j-1]}:")
+            # print(f"
+Расчет для {seq1[i-1]} vs {seq2[j-1]}:")
             # print(f"↖ Совпадение: {dp[i-1][j-1]} + {match if seq1[i-1] == seq2[j-1] else '-1'} = {match_score}")
             # print(f"↑ Удаление:   {dp[i-1][j]} + {gap} = {delete}")
             # print(f"← Вставка:    {dp[i][j-1]} + {gap} = {insert}")
@@ -861,12 +871,14 @@ def needleman_wunsch(seq1, seq2, match=2, mismatch=-3, gap=-1):
     align1, align2 = "", ""
     i, j = n, m
     
-    #print("\nОБРАТНЫЙ ПРОХОД:")
+    #print("
+ОБРАТНЫЙ ПРОХОД:")
     #print("=" * 50)
     
     step = 1
     while i > 0 or j > 0:
-        #print(f"\nШаг {step}: Позиция ({i},{j})")
+        #print(f"
+Шаг {step}: Позиция ({i},{j})")
         
         if i > 0 and j > 0 and dp[i][j] == dp[i-1][j-1] + (match if seq1[i-1] == seq2[j-1] else mismatch):
             #print(f"  ↖ Совпадение: {seq1[i-1]} = {seq2[j-1]}")
@@ -911,7 +923,8 @@ def main():
     
     result1, result2, matrix = needleman_wunsch(seq1, seq2)
     
-    print("\n" + "=" * 70)
+    print("
+" + "=" * 70)
     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ:")
     print("=" * 70)
     print(f"Выравнивание 1: {result1}")
